@@ -10,6 +10,7 @@ type Props = {
   type?: 'button' | 'submit'
   bgColor?: string
   textColor?: string
+  isBig?: boolean
 }
 
 const Button = ({
@@ -21,15 +22,16 @@ const Button = ({
   type,
   bgColor,
   textColor,
+  isBig
 }: Props) => (
   <button
     type={type || 'button'}
     disabled={submitting || false}
-    className={`flexCenter gap-3 px-4 py-3 
+    className={`flexCenter gap-3 ${isBig ? 'px-7 py-4 text-base' : 'px-4 py-3 text-sm'} 
         ${textColor ? textColor : 'text-white'} 
         ${
           submitting ? 'bg-black/50' : bgColor ? bgColor : 'bg-primary-purple'
-        } rounded-xl text-sm font-medium max-md:w-full`}
+        } rounded-xl font-medium max-md:w-full`}
     onClick={handleClick}
   >
     {leftIcon && (
