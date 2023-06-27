@@ -47,7 +47,7 @@ export const authOptions: NextAuthOptions = {
         const newSession = {
           ...session,
           user: {
-            ...session?.user,
+            ...session.user,
             ...data?.user,
           },
         }
@@ -66,9 +66,9 @@ export const authOptions: NextAuthOptions = {
 
         if (!userExists.user) {
           await createUser(
-            user?.name as string,
-            user?.email as string,
-            user?.image as string,
+            user.name as string,
+            user.email as string,
+            user.image as string,
           )
         }
 

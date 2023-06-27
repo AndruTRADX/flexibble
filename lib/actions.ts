@@ -30,7 +30,7 @@ export const fetchToken = async () => {
     const response = await fetch(`${serverUrl}/api/auth/token`)
     return response.json()
   } catch (err) {
-    console.log('error')
+    console.log(err)
   }
 }
 
@@ -44,7 +44,7 @@ export const uploadImage = async (imagePath: string) => {
     })
     return response.json()
   } catch (err) {
-    console.log('error')
+    console.log(err)
   }
 }
 
@@ -52,7 +52,7 @@ const makeGraphQLRequest = async (query: string, variables = {}) => {
   try {
     return await client.request(query, variables)
   } catch (err) {
-    console.log('error')
+    console.log(err)
   }
 }
 
