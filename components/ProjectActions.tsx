@@ -25,7 +25,7 @@ const ProjectActions = ({ projectId }: Props) => {
 
       router.push('/')
     } catch (error) {
-      console.error(error)
+      console.error('Error')
     } finally {
       setIsDeleting(false)
     }
